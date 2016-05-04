@@ -1,0 +1,13 @@
+{
+  "name": "b-unix",
+  "version": "0.0.6",
+  "keywords": "backup, automatic, automatically, linux",
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/Boxtade/b-unix.git"
+  },
+  "os" : [ "linux" ],
+  "dependencies": {
+    "bluebird": "^3.3.5"
+  }
+}

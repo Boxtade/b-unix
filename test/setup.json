@@ -26,5 +26,19 @@
       "filename":"newFile2",
       "extension":".txt"
     }
-  ]
+  ],
+  "mail": {
+    "transport": "SMTP",
+    "options": {
+      "service": "Mailgun",
+      "auth": {
+        "user": "admin@boxtade.com",
+        "pass": "850518Ks"
+        }
+      },
+    "from":"Boxtade",
+    "to":"boxtade@gmail.com",
+    "subject": "b-unix backup system",
+    "template":"./template/content.html"
+  }
 }

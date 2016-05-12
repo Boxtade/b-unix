@@ -1,0 +1,14 @@
+{
+    "transport": "SMTP",
+    "options": {
+        "service": "Mailgun",
+            "auth": {
+            "user": "admin@boxtade.com",
+                "pass": "850518Ks"
+        }
+    },
+    "from":"Boxtade",
+    "to":"boxtade@gmail.com",
+    "subject": "Problème avec vps 2016 du site Boxtade.com",
+    "template":"./template/content.html"
+}

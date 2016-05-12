@@ -4,14 +4,17 @@
 var exec = require('child_process').exec;
 var time = require('./time');
 var fs = require("fs");
-
-/* Prevoir un systeme de messagerie */
-
+var bmailer = require("b-mailer");
+var mail;
 
 var handleException = function(msg){
-    fs.appendFile('BackupService_error.log',msg);
+    fs.appendFile('bunix_error.log',msg);
     console.error('\n\nREAD THE BackupService_error.log');
-    throw new Error(msg);
+    bmailer.sendSync(mail,function(){throw new Error(msg);});
+};
+
+exports.init = function(m){
+    mail = m;
 };
 
 exports.process = function(command, callback){

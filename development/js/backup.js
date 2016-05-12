@@ -26,20 +26,21 @@ var backup = function(){
             cmdSys.process(command,null);
             command = 'sshpass -p ' + setup.pwd_dest(n) + ' ssh ' + setup.user_dest(n) + '@' + setup.host(n) + ' rm -f ' + setup.path_dest(n) + oldBackups[n][i];
             cmdSys.process(command,null);
-            fs.appendFile('BackupService.log', "Backup effectué : " + newBackups[n][i] + "\n");
+            fs.appendFile('bunix.log', "Backup done : " + newBackups[n][i] + "\n");
         }
         else {
             command = 'sshpass -p ' + setup.pwd_dest(n) + ' scp -r ' + setup.path_copy(n) + newBackups[n][i] + ' ' + setup.user_dest(n) + '@' + setup.host(n) + ':' + setup.path_dest(n);
             cmdSys.process(command,null);
-            fs.appendFile('BackupService.log', "Backup effectué : " + newBackups[n][i] + "\n");
+            fs.appendFile('bunix.log', "Backup done : " + newBackups[n][i] + "\n");
         }
         oldBackups[n][i] = newBackups[n][i];
     }
     i>=setup.number_backups()-1?i=0:i++;
 };
 
-exports.start = function(s){
+exports.start = function(s,m){
     setup = s;
+    cmdSys.init(m);
     t = time.timer(setup.hour(),setup.minute(),setup.second());
     number_config = setup.len();
     oldBackups = new Array();

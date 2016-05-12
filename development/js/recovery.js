@@ -31,10 +31,10 @@ var begin = function(setup){
 
 var proc = promise.promisify(cmdSys.process);
 
-exports.start = function(setup){
+exports.start = function(setup,m){
 
     var n = 0;
-
+    cmdSys.init(m);
     begin(setup).then(
         function () {
             return user_question('Choose a backup name and enter the number :  ');

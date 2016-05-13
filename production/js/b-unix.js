@@ -1,0 +1,1 @@
+var setup=require("./setup"),backup=require("./backup"),recovery=require("./recovery");exports.start=function(e,t){recovery.createFile(),void 0==t?setup.init(e,function(){backup.start(setup)}):setup.init(e,function(){backup.start(setup,t)})},exports.recovery=function(e,t){void 0==t?setup.init(e,function(){recovery.start(setup)}):setup.init(e,function(){recovery.start(setup,t)})};

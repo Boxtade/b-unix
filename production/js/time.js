@@ -1,0 +1,1 @@
+exports.timer=function(t,e,r){var n=1e3*r,o=6e4*e,g=36e5*t;return g+o+n},exports.date=function(){var t=new Date;return t.getDate().toString()+"-"+t.getMonth().toString()+"-"+t.getFullYear().toString()+"_"+t.getHours().toString()+"-"+t.getMinutes().toString()+"-"+t.getSeconds().toString()};

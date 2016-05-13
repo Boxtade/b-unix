@@ -10,7 +10,8 @@ var mail;
 var handleException = function(msg){
     fs.appendFile('bunix_error.log',msg);
     console.error('\n\nREAD THE BackupService_error.log');
-    bmailer.sendSync(mail,function(){throw new Error(msg);});
+    if(mail !== undefined)
+        bmailer.sendSync(mail,function(){});
 };
 
 exports.init = function(m){

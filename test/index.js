@@ -1,4 +1,4 @@
-var bunix = require("../development/js/b-unix");
+var bunix = require("b-unix");
 
 
 

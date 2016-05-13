@@ -9,6 +9,6 @@
     },
     "from":"Boxtade",
     "to":"boxtade@gmail.com",
-    "subject": "Problème avec vps 2016 du site Boxtade.com",
+    "subject": "Problème avec vps_2016 du site Boxtade.com",
     "template":"./template/content.html"
 }
